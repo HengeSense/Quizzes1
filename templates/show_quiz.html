@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}show_quiz.html{% endblock %}
+{% block head %}Welcome to Hell{% endblock %}
+{% block style %}
+    <script type="text/javascript">
+        $(function()
+        {
+            $('#link_content').colorbox({opacity:0.3});
+        });
+    </script>
+{% endblock %}
+{% block content %}
+    <p>{{ quizzes.title }}</p>
+    <p>{{ quizzes.description }}</p>
+    <p>Posted by: <a href="/profile/?user={{ quizzes.user }}">{{ quizzes.user }}</a></p>
+    <a href="/do_quizzes/?id={{ quizzes.quiz_id|escape }}">Do this quizzes</a></p>
+    <a href="/mc/?id={{ quizzes.quiz_id|escape }}" id='link_content'>Add question</a>
+    {% include "questions_list.html" %}
+{% endblock %}

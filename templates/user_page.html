@@ -1,0 +1,9 @@
+<!--will be deleted-->
+
+{% extends "base.html" %}
+{% block title %}user_page.html{{ username }}{% endblock %}
+{% block head %}Quizzes for {{ username }}{% endblock %}
+{% block content %}
+    <a href="/add_quiz/">Add a new quiz</a></p><br></br><br></br><br></br>
+    {% include "quizzes_list.html" %}
+{% endblock %}

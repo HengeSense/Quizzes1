@@ -1,0 +1,12 @@
+{% if mcq %}
+    {% for mcq in mcq.all %}
+    <p>{{ mcq.question }}</p>
+        <ol>
+        {% for choices in mcq.choices.all %}
+            <li><p>{{ choices.description }}</p></li>
+        {% endfor %}
+        </ol>
+    {% endfor %}
+{% else %}
+<p>No question found</p>
+{% endif %}

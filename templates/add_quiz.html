@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}add_quiz.html{{ username }}{% endblock %}
+{% block head %}Quizzes for {{ username }}{% endblock %}
+{% block content %}
+    {% if form.errors %}
+        <p>The title can't be empty</p>
+    {% endif %}
+    <form method="post" action=".">{% csrf_token %}
+        {{ form.as_table }}
+        <input type="submit" value="save" />
+    </form>
+{% endblock %}
